@@ -1,5 +1,54 @@
-<!-- {{ range first 3 (where site.RegularPages.ByDate.Reverse "Type" "in" site.Params.mainSections )}}
-<a href="{{ .Permalink }}">{{ partial "summary.html" . }}</a>
+{{/*  
+<div
+class="grid grid-cols-2 lg:grid-cols-3 gap-5">
+    {{ range  (where site.RegularPages "Type" "in" site.Params.sponsors )}}
+    {{ if .Params.image }}
+        <div class = "shadow-custom h-20 lg:h-48 rounded-[10px]">
+            <img id="thumb" alt="{{.Title}}" class="relative h-full w-full"
+            src="{{ .Params.image | relURL }}" />
+            {{ else }}
+            <img id="thumb" alt="{{.Title}}" class="aspect-video object-cover  lg:h-44"
+            src='{{ "/img/default.jpg" | relURL }}'>
+        </div>
+    {{ end }}
 {{ end }}
+</div>  */}}
 
- -->
+
+{{/*  <div>
+    <div class="grid-container">
+        <div class="grid-item">
+        <div class= "center-image">
+            <img src="your-image-url.jpg" alt="Centered Image">
+        </div>
+        </div>
+
+        {{ range  (where site.RegularPages "Type" "in" site.Params.sponsors )}}
+        {{ if .Params.image }}
+        <div class="grid-item">
+            <div class = "center-image">
+                <img id="thumb" alt="{{.Title}}" 
+                src="{{ .Params.image | relURL }}" />
+                {{ else }}
+                <img id="thumb" alt="{{.Title}}" 
+                src='{{ "/img/default.jpg" | relURL }}'>
+            </div>
+        </div>
+        {{ end }}
+        {{ end }}
+
+       
+    </div>
+</div>  */}}
+
+
+<div class="grid-container">
+    {{ range  (where site.RegularPages "Type" "in" site.Params.sponsors )}}
+        <div class="grid-item lg:px-0 duration-500 transform hover:-translate-y-1 hover:shadow-md">
+            <img alt="{{.Title}}" 
+            src="{{ .Params.image | relURL }}" />
+        </div>
+        {{ end }}
+</div>
+
+
