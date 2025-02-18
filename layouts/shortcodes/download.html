@@ -1,5 +1,7 @@
-{{- with .Get 0 -}}
-    <a href="{{ . }}" download>{{ . }}</a>
+{{- $url := .Get 0 -}}
+{{- $text := .Get 1 -}}
+{{- if and $url $text -}}
+    <a href="{{ $url }}" download>{{ $text }}</a>
 {{- else -}}
-    {{- errorf "The %s shortcode requires a single positional parameter, a URL"}}
+    {{- errorf "Download shortcode error: Expected two parameters (file path and display text), got url=%q text=%q" $url $text -}}
 {{- end -}}
