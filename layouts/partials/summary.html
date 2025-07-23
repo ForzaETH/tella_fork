@@ -1,10 +1,10 @@
 <div
   class="sans w-full px-2 border-b border-r border-l lg:border-t border-gray-400 lg:max-w-full lg:flex mt-3 lg:px-0 duration-500 transform hover:-translate-y-1 hover:shadow-md">
   {{ if .Params.image }}
-  <img id="thumb" alt="{{.Title}}" class="aspect-video object-fit: contain  lg:h-44"
+  <img id="thumb" alt="{{.Title}}" class="aspect-photo object-cover w-auto lg:h-44"
     src="{{ .Params.image | relURL }}" />
   {{ else }}
-  <img id="thumb" alt="{{.Title}}" class="aspect-video object-fit: cover w-auto lg:h-44"
+  <img id="thumb" alt="{{.Title}}" class="aspect-photo object-cover  w-auto lg:h-44"
     src='{{ "/img/default.jpg" | relURL }}'>
   {{ end }}
   <div
